@@ -31,6 +31,7 @@ FenPrincipale::FenPrincipale() :
     bouton_clear(new QPushButton("C", this))
 {
     /// @note 1. Format <<this>> -----------------------------
+    this->setWindowTitle("Zero Calculator");
     this->setFixedSize(320, 200);
 
 

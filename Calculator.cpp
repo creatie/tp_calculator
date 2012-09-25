@@ -47,7 +47,7 @@ double Calculator::term(bool get) // multiply or divide
         case DIV:{
             double d = prim(true);
             if(d != 0.0){
-                left = left / term(true);
+                //left = left / term(true);
                 left = left / d;
                 break;
             }//if
@@ -90,10 +90,12 @@ double Calculator::prim(bool get)
     case LP:
     {
         double e = expr(true);
-        if (curr_tok.getKind() != RP)
+        if (curr_tok.getKind() != RP){
             qDebug() << "oops: Right parenthesis expected\n";
             //msg_erreur = "erreur: manque parenthese de femeture";
             return 0;
+        }
+
         //throw  ErreurRpExpected();
         get_token();    // eat')'
         return e;
